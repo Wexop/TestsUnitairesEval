@@ -38,13 +38,25 @@ class TestPalindrome(unittest.TestCase):
     def testBonjour(self):
         mot = 'truc'
 
-        cas = [[LangueFrancaise(), "Bonjour"], [LangueAnglaise(), "Hello"]]
+        cas = [
+            [LangueFrancaise(), 'Bonjour', MomentDeLaJournée.INCONNU],
+            [LangueFrancaise(), 'Bonjour', MomentDeLaJournée.MATIN],
+            [LangueFrancaise(), 'Bonjour', MomentDeLaJournée.APRES_MIDI],
+            [LangueFrancaise(), 'Bonsoir', MomentDeLaJournée.SOIR],
+            [LangueFrancaise(), 'Bonsoir', MomentDeLaJournée.NUIT],
+            [LangueAnglaise(), 'Hello', MomentDeLaJournée.INCONNU],
+            [LangueAnglaise(), 'Good Morning', MomentDeLaJournée.MATIN],
+            [LangueAnglaise(), 'Good Afternoon', MomentDeLaJournée.APRES_MIDI],
+            [LangueAnglaise(), 'Good Evening', MomentDeLaJournée.SOIR],
+            [LangueAnglaise(), 'Good Night', MomentDeLaJournée.NUIT],
+        ]
         for param in cas:
             with(self.subTest(param[0])):
                 langue = param[0]
+                moment = param[2]
                 palindrome = 'kayak'
 
-                detecteur = DetecteurPalindrommeBuilder().ayantPourLangue(langue).build()
+                detecteur = DetecteurPalindrommeBuilder().ayantPourLangue(langue).ayantPourMoment(moment).build()
                 resultat = detecteur.detecter(palindrome)
 
                 premiereLigne = resultat.split(os.linesep)[0]
