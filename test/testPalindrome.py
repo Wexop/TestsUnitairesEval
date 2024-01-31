@@ -18,13 +18,21 @@ class TestPalindrome(unittest.TestCase):
                 self.assertIn(attendu, resultat)
 
     def testBienDit(self):
-        palindrome = 'kayak'
 
-        detecteur = DetecteurPalindromme()
-        resultat = detecteur.detecter(palindrome)
+        cas = [[LangueFrancaise(), "Bien dit"], [LangueAnglaise(), "Well said"]]
 
-        attendu = palindrome + os.linesep + "Bien dit"
-        self.assertIn(attendu, resultat)
+        for param in cas:
+            with(self.subTest(param[0])):
+                langue = param[0]
+                palindrome = 'kayak'
+
+                detecteur = DetecteurPalindrommeBuilder().ayantPourLangue(langue).build()
+                resultat = detecteur.detecter(palindrome)
+
+                bienDit = param[1]
+
+                attendu = palindrome + os.linesep + bienDit
+                self.assertIn(attendu, resultat)
 
     def testBonjour(self):
         mot = 'truc'
