@@ -3,6 +3,7 @@ import unittest
 
 from LangueAnglaise import LangueAnglaise
 from LangueFrancaise import LangueFrancaise
+from momentJournee import MomentJournee
 from utilities.detecteurPalindrommeBuilder import DetecteurPalindrommeBuilder
 
 testNonPalindrome = ["maison", "truc", "ceiling-shot", "flip-rest"]
@@ -39,16 +40,16 @@ class TestPalindrome(unittest.TestCase):
         mot = 'truc'
 
         cas = [
-            [LangueFrancaise(), 'Bonjour', MomentDeLaJournée.INCONNU],
-            [LangueFrancaise(), 'Bonjour', MomentDeLaJournée.MATIN],
-            [LangueFrancaise(), 'Bonjour', MomentDeLaJournée.APRES_MIDI],
-            [LangueFrancaise(), 'Bonsoir', MomentDeLaJournée.SOIR],
-            [LangueFrancaise(), 'Bonsoir', MomentDeLaJournée.NUIT],
-            [LangueAnglaise(), 'Hello', MomentDeLaJournée.INCONNU],
-            [LangueAnglaise(), 'Good Morning', MomentDeLaJournée.MATIN],
-            [LangueAnglaise(), 'Good Afternoon', MomentDeLaJournée.APRES_MIDI],
-            [LangueAnglaise(), 'Good Evening', MomentDeLaJournée.SOIR],
-            [LangueAnglaise(), 'Good Night', MomentDeLaJournée.NUIT],
+            [LangueFrancaise(), 'Bonjour', MomentJournee.INCONNU],
+            [LangueFrancaise(), 'Bonjour', MomentJournee.MATIN],
+            [LangueFrancaise(), 'Bonjour', MomentJournee.APRES_MIDI],
+            [LangueFrancaise(), 'Bonsoir', MomentJournee.SOIR],
+            [LangueFrancaise(), 'Bonsoir', MomentJournee.NUIT],
+            [LangueAnglaise(), 'Hello', MomentJournee.INCONNU],
+            [LangueAnglaise(), 'Good Morning', MomentJournee.MATIN],
+            [LangueAnglaise(), 'Good Afternoon', MomentJournee.APRES_MIDI],
+            [LangueAnglaise(), 'Good Evening', MomentJournee.SOIR],
+            [LangueAnglaise(), 'Good Night', MomentJournee.NUIT],
         ]
         for param in cas:
             with(self.subTest(param[0])):
