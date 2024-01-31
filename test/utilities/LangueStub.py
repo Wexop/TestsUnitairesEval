@@ -4,3 +4,6 @@ class LangueStub:
 
     def bonjour(self):
         return ""
+
+    def auRevoir(self):
+        return ""

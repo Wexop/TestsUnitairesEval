@@ -5,5 +5,8 @@ class LangueFrancaise:
     def bonjour(self):
         return "Bonjour"
 
+    def auRevoir(self):
+        return "Au revoir"
+
     def __str__(self):
         return "Langue Francaise"

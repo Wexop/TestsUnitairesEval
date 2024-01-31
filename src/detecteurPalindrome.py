@@ -10,7 +10,7 @@ class DetecteurPalindromme:
         mirroir = mot[::-1]
 
         debut = self.__langue.bonjour() + os.linesep + mirroir
-        aurevoir = os.linesep + "Au revoir"
+        aurevoir = os.linesep + self.__langue.auRevoir()
 
         if (mirroir == mot):
             return debut + os.linesep + self.__langue.bienDit() + aurevoir
