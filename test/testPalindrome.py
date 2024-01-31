@@ -1,5 +1,7 @@
 import unittest
 
+from src.detecteurPalindrome import DetecteurPalindromme
+
 testNonPalindrome = ["maison", "truc", "ceiling-shot", "flip-rest"]
 
 
