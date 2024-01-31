@@ -37,7 +37,6 @@ class TestPalindrome(unittest.TestCase):
                 self.assertIn(attendu, resultat)
 
     def testBonjour(self):
-        mot = 'truc'
 
         cas = [
             [LangueFrancaise(), 'Bonjour', MomentJournee.INCONNU],
@@ -64,7 +63,6 @@ class TestPalindrome(unittest.TestCase):
                 self.assertEqual(param[1], premiereLigne)
 
     def testAuRevoir(self):
-        mot = 'truc'
 
         cas = [[LangueFrancaise(), "Au revoir"], [LangueAnglaise(), "Good bye"]]
         for param in cas:
