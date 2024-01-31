@@ -1,2 +1,3 @@
 class LangueStub:
-    pass
+    def bienDit(self):
+        return ""

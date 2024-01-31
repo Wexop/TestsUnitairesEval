@@ -1,6 +1,8 @@
 import os
 import unittest
 
+from LangueAnglaise import LangueAnglaise
+from LangueFrancaise import LangueFrancaise
 from src.detecteurPalindrome import DetecteurPalindromme
 from utilities.detecteurPalindrommeBuilder import DetecteurPalindrommeBuilder
 

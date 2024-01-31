@@ -2,13 +2,19 @@ import os
 
 
 class DetecteurPalindromme:
+
+    def __init__(self, langue):
+        self.__langue = langue
+
     def detecter(self, mot):
         mirroir = mot[::-1]
 
-        debut = "Bonjour" + os.linesep + mirroir + os.linesep
+        debut = "Bonjour" + os.linesep + mirroir
         aurevoir = os.linesep + "Au revoir"
 
-        if (mirroir == mot):
-            return debut + mirroir + os.linesep + "Bien dit" + aurevoir
+        print(debut + os.linesep + self.__langue.bienDit() + aurevoir)
 
-        return debut + mirroir + aurevoir
+        if (mirroir == mot):
+            return debut + os.linesep + self.__langue.bienDit() + aurevoir
+
+        return debut + aurevoir
