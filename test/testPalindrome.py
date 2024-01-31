@@ -14,7 +14,7 @@ class TestPalindrome(unittest.TestCase):
                 resultat = detecteur.detecter(mot)
 
                 attendu = mot[::-1]
-                self.assertEquals(attendu, resultat)
+                self.assertEqual(attendu, resultat)
 
     def testBienDit(self):
         palindrome = 'kayak'
@@ -24,3 +24,12 @@ class TestPalindrome(unittest.TestCase):
 
         attendu = palindrome + os.linesep + "Bien dit"
         self.assertIn(attendu, resultat)
+
+    def testBonjour(self):
+        mot = 'truc'
+
+        detecteur = DetecteurPalindromme()
+        resultat = detecteur.detecter(mot)
+
+        premiereLigne = resultat.split(os.linesep)[0]
+        self.assertEqual("Bonjour", premiereLigne)
