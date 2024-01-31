@@ -1,3 +1,11 @@
+import os
+
+
 class DetecteurPalindromme:
     def detecter(self, mot):
-        return mot[::-1]
+        mirroir = mot[::-1]
+
+        if (mirroir == mot):
+            return mirroir + os.linesep + "Bien dit"
+
+        return mirroir
