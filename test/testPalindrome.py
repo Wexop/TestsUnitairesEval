@@ -39,11 +39,17 @@ class TestPalindrome(unittest.TestCase):
     def testBonjour(self):
         mot = 'truc'
 
-        detecteur = DetecteurPalindromme()
-        resultat = detecteur.detecter(mot)
+        cas = [[LangueFrancaise(), "Bonjour"], [LangueAnglaise(), "Hello"]]
+        for param in cas:
+            with(self.subTest(param[0])):
+                langue = param[0]
+                palindrome = 'kayak'
 
-        premiereLigne = resultat.split(os.linesep)[0]
-        self.assertEqual("Bonjour", premiereLigne)
+                detecteur = DetecteurPalindrommeBuilder().ayantPourLangue(langue).build()
+                resultat = detecteur.detecter(palindrome)
+
+                premiereLigne = resultat.split(os.linesep)[0]
+                self.assertEqual(param[1], premiereLigne)
 
     def testAuRevoir(self):
         mot = 'truc'
