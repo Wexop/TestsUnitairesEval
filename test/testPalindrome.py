@@ -33,3 +33,12 @@ class TestPalindrome(unittest.TestCase):
 
         premiereLigne = resultat.split(os.linesep)[0]
         self.assertEqual("Bonjour", premiereLigne)
+
+    def testAuRevoir(self):
+        mot = 'truc'
+
+        detecteur = DetecteurPalindromme()
+        resultat = detecteur.detecter(mot)
+
+        premiereLigne = resultat.split(os.linesep)[-1]
+        self.assertEqual("Aurevoir", premiereLigne)
