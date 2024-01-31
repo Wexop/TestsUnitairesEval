@@ -2,6 +2,7 @@ import os
 import unittest
 
 from src.detecteurPalindrome import DetecteurPalindromme
+from utilities.detecteurPalindrommeBuilder import DetecteurPalindrommeBuilder
 
 testNonPalindrome = ["maison", "truc", "ceiling-shot", "flip-rest"]
 
@@ -10,7 +11,7 @@ class TestPalindrome(unittest.TestCase):
     def testMirroir(self):
         for mot in testNonPalindrome:
             with(self.subTest(mot)):
-                detecteur = DetecteurPalindromme()
+                detecteur = DetecteurPalindrommeBuilder().build()
                 resultat = detecteur.detecter(mot)
 
                 attendu = mot[::-1]
