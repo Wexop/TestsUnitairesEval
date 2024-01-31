@@ -5,7 +5,9 @@ class DetecteurPalindromme:
     def detecter(self, mot):
         mirroir = mot[::-1]
 
-        if (mirroir == mot):
-            return mirroir + os.linesep + "Bien dit"
+        debut = "Bonjour" + os.linesep + mirroir + os.linesep
 
-        return mirroir
+        if (mirroir == mot):
+            return debut + mirroir + os.linesep + "Bien dit"
+
+        return debut + mirroir
