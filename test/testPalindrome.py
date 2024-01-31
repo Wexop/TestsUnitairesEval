@@ -41,4 +41,4 @@ class TestPalindrome(unittest.TestCase):
         resultat = detecteur.detecter(mot)
 
         premiereLigne = resultat.split(os.linesep)[-1]
-        self.assertEqual("Aurevoir", premiereLigne)
+        self.assertEqual("Au revoir", premiereLigne)
