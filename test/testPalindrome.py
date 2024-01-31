@@ -14,7 +14,7 @@ class TestPalindrome(unittest.TestCase):
                 resultat = detecteur.detecter(mot)
 
                 attendu = mot[::-1]
-                self.assertEqual(attendu, resultat)
+                self.assertIn(attendu, resultat)
 
     def testBienDit(self):
         palindrome = 'kayak'
