@@ -3,7 +3,6 @@ import unittest
 
 from LangueAnglaise import LangueAnglaise
 from LangueFrancaise import LangueFrancaise
-from src.detecteurPalindrome import DetecteurPalindromme
 from utilities.detecteurPalindrommeBuilder import DetecteurPalindrommeBuilder
 
 testNonPalindrome = ["maison", "truc", "ceiling-shot", "flip-rest"]
@@ -54,8 +53,14 @@ class TestPalindrome(unittest.TestCase):
     def testAuRevoir(self):
         mot = 'truc'
 
-        detecteur = DetecteurPalindromme()
-        resultat = detecteur.detecter(mot)
+        cas = [[LangueFrancaise(), "Au revoir"], [LangueAnglaise(), "Good bye"]]
+        for param in cas:
+            with(self.subTest(param[0])):
+                langue = param[0]
+                palindrome = 'kayak'
 
-        premiereLigne = resultat.split(os.linesep)[-1]
-        self.assertEqual("Au revoir", premiereLigne)
+                detecteur = DetecteurPalindrommeBuilder().ayantPourLangue(langue).build()
+                resultat = detecteur.detecter(palindrome)
+
+                derniereLigne = resultat.split(os.linesep)[-1]
+                self.assertEqual(param[1], derniereLigne)
