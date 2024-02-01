@@ -17,7 +17,17 @@ class LangueAnglaise:
 
         return "Hello"
 
-    def auRevoir(self):
+    def auRevoir(self, moment):
+
+        if moment == MomentJournee.MATIN:
+            return "Good bye am"
+        if moment == MomentJournee.APRES_MIDI:
+            return "Good bye pm"
+        if moment == MomentJournee.SOIR:
+            return "Good bye soir"
+        if moment == MomentJournee.NUIT:
+            return "Good bye nuit"
+
         return "Good bye"
 
     def __str__(self):
